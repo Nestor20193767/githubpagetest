@@ -3,71 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIREVE</title>
+  <title>SIREVE: Sistema de Registro de Placas de Vehículos</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container">
     <!-- Sidebar -->
-    <aside id="sidebar" class="sidebar">
-      <button id="toggle-button" class="toggle-button">&lt;</button>
-      <div class="logo">
-        <img src="assets/logo.png" alt="Logo">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <img src="logo.png" alt="Logo" class="logo">
         <h1>SIREVE</h1>
+        <p>Sistema de Registro de Placas de Vehículos</p>
+        <button id="toggle-menu" class="toggle-btn">&lt;</button>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#" class="active">Registrar Placa Oficial</a></li>
-          <li><a href="#">Buscar Placa</a></li>
-          <li><a href="#">Base de Datos</a></li>
-          <li><a href="#">Manual de Usuario</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Registrar Placa Oficial</a></li>
+        <li><a href="#">Buscar Placa</a></li>
+        <li><a href="#">Base de Datos</a></li>
+        <li><a href="#">Manual de Usuario</a></li>
+      </ul>
       <div class="download-section">
         <h3>Descargar Registros</h3>
         <select>
-          <option>Registro completo</option>
-          <option>Placas activas</option>
-          <option>Placas inactivas</option>
+          <option value="completo">Registro completo</option>
+          <option value="parcial">Registro parcial</option>
         </select>
-        <button>Descargar</button>
       </div>
-    </aside>
-
+    </nav>
     <!-- Main Content -->
-    <main>
-      <h2>Registrar Nueva Placa</h2>
+    <main class="main-content">
+      <header>
+        <img src="logo.png" alt="Logo" class="main-logo">
+        <h2>Registrar Nueva Placa</h2>
+      </header>
       <form>
-        <label for="institucion">Institución:</label>
-        <select id="institucion">
-          <option>Policía</option>
-          <option>Bomberos</option>
-          <option>Ambulancia</option>
-        </select>
-
-        <label for="placa">Placa del Vehículo:</label>
-        <input type="text" id="placa" placeholder="Ingrese la placa">
-
-        <label for="conductor">Conductor Designado:</label>
-        <input type="text" id="conductor" placeholder="Nombre del conductor">
-
-        <label for="estado">Estado:</label>
-        <select id="estado">
-          <option>Pendiente</option>
-          <option>Aprobado</option>
-          <option>Rechazado</option>
-        </select>
-
-        <label for="preliminar">Preliminar:</label>
-        <input type="text" id="preliminar" placeholder="Ingrese el preliminar">
-
-        <label for="expediente">Expediente:</label>
-        <input type="text" id="expediente" placeholder="Ingrese el expediente">
+        <div class="form-group">
+          <label for="institucion">Institución:</label>
+          <select id="institucion">
+            <option>Policía</option>
+            <option>Transporte</option>
+            <option>Particular</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="placa">Placa del Vehículo:</label>
+          <input type="text" id="placa">
+        </div>
+        <div class="form-group">
+          <label for="conductor">Conductor Designado:</label>
+          <input type="text" id="conductor">
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <select id="estado">
+            <option>Pendiente</option>
+            <option>Aprobado</option>
+            <option>Rechazado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="preliminar">Preliminar:</label>
+          <input type="text" id="preliminar">
+        </div>
+        <div class="form-group">
+          <label for="expediente">Expediente:</label>
+          <input type="text" id="expediente">
+        </div>
       </form>
     </main>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
+
 
