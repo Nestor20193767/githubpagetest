@@ -1,1 +1,144 @@
-<h1> Github pages  test </h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIREVE</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Nestor20193767/edificioMichael/main/ico_SIREVE-removebg-preview (1) (1).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #004085;
+            color: white;
+            padding: 10px 20px;
+        }
+        header img {
+            width: 60px;
+            margin-right: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #004085;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .sidebar {
+            width: 200px;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            background: #f8f9fa;
+            padding: 15px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .sidebar a:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/Nestor20193767/edificioMichael/main/ico_SIREVE-removebg-preview (1) (1).png" alt="Logo">
+        <h1>SIREVE</h1>
+    </header>
+    <div class="sidebar">
+        <a href="#register">Registrar Placa</a>
+        <a href="#search">Buscar Placa</a>
+        <a href="#database">Base de Datos</a>
+        <a href="#manual">Manual de Usuario</a>
+    </div>
+    <main>
+        <section id="register">
+            <h2>Registrar Nueva Placa</h2>
+            <div class="form-group">
+                <label for="institution">Institución:</label>
+                <select id="institution">
+                    <option value="Policía">Policía</option>
+                    <option value="Ejército">Ejército</option>
+                    <option value="Fuerza Aérea">Fuerza Aérea</option>
+                    <option value="Naval">Naval</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="plate">Placa del Vehículo:</label>
+                <input type="text" id="plate" placeholder="Ingrese la placa">
+            </div>
+            <div class="form-group">
+                <label for="driver">Conductor Designado:</label>
+                <input type="text" id="driver" placeholder="Ingrese el nombre del conductor">
+            </div>
+            <div class="form-group">
+                <label for="state">Estado:</label>
+                <select id="state">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Archivado">Archivado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="prelim">Preliminar:</label>
+                <input type="text" id="prelim" placeholder="Ingrese el preliminar">
+            </div>
+            <div class="form-group">
+                <label for="expedient">Expediente:</label>
+                <input type="text" id="expedient" placeholder="Ingrese el expediente">
+            </div>
+            <div class="form-group">
+                <label for="accident">Tipo de Accidente:</label>
+                <textarea id="accident" rows="3" placeholder="Describa el accidente"></textarea>
+            </div>
+            <button onclick="registerPlate()">Registrar</button>
+        </section>
+    </main>
+    <script>
+        function registerPlate() {
+            const plate = document.getElementById('plate').value;
+            const driver = document.getElementById('driver').value;
+
+            if (!plate || !driver) {
+                alert('Por favor, complete todos los campos requeridos.');
+                return;
+            }
+
+            alert('Registro exitoso');
+        }
+    </script>
+</body>
+</html>
+
