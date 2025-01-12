@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú Desplegable</title>
+  <title>SIREVE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <button id="toggle-button" class="toggle-button">&lt;</button>
       <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="assets/logo.png" alt="Logo">
         <h1>SIREVE</h1>
       </div>
-      <nav class="navigation">
+      <nav>
         <ul>
-          <li><button class="menu-item" onclick="toggleSubmenu('submenu1')">Registrar Placa Oficial</button>
-            <ul id="submenu1" class="submenu">
-              <li><a href="#">Registrar Nueva Placa</a></li>
-              <li><a href="#">Editar Placa</a></li>
-            </ul>
-          </li>
+          <li><a href="#" class="active">Registrar Placa Oficial</a></li>
           <li><a href="#">Buscar Placa</a></li>
           <li><a href="#">Base de Datos</a></li>
           <li><a href="#">Manual de Usuario</a></li>
         </ul>
       </nav>
-      <div class="downloads">
-        <label for="download">Descargar Registros</label>
-        <select id="download">
+      <div class="download-section">
+        <h3>Descargar Registros</h3>
+        <select>
           <option>Registro completo</option>
-          <option>Registros pendientes</option>
+          <option>Placas activas</option>
+          <option>Placas inactivas</option>
         </select>
         <button>Descargar</button>
       </div>
     </aside>
-    <main class="content">
+
+    <!-- Main Content -->
+    <main>
       <h2>Registrar Nueva Placa</h2>
-      <!-- Contenido adicional -->
+      <form>
+        <label for="institucion">Institución:</label>
+        <select id="institucion">
+          <option>Policía</option>
+          <option>Bomberos</option>
+          <option>Ambulancia</option>
+        </select>
+
+        <label for="placa">Placa del Vehículo:</label>
+        <input type="text" id="placa" placeholder="Ingrese la placa">
+
+        <label for="conductor">Conductor Designado:</label>
+        <input type="text" id="conductor" placeholder="Nombre del conductor">
+
+        <label for="estado">Estado:</label>
+        <select id="estado">
+          <option>Pendiente</option>
+          <option>Aprobado</option>
+          <option>Rechazado</option>
+        </select>
+
+        <label for="preliminar">Preliminar:</label>
+        <input type="text" id="preliminar" placeholder="Ingrese el preliminar">
+
+        <label for="expediente">Expediente:</label>
+        <input type="text" id="expediente" placeholder="Ingrese el expediente">
+      </form>
     </main>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
